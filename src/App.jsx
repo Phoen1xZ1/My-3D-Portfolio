@@ -1,10 +1,12 @@
+import Hero from "./sections/Hero"
+import ShowcaseSection from "./sections/ShowcaseSection"
+
 const App = () => {
   return (
-    <main>
-        <div>
-            <h1>Hello, World!</h1>
-        </div>
-    </main>
+    <>
+      <Hero />
+      <ShowcaseSection />
+    </>
   )
 }
 
