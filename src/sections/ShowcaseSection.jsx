@@ -12,25 +12,30 @@ const ShowcaseSection = () => {
   const project3Ref = useRef(null);
 
   useGSAP(() => {
-    const projects = [project1Ref.current, project2Ref.current, project3Ref.current];
+    const projects = [
+      project1Ref.current,
+      project2Ref.current,
+      project3Ref.current,
+    ];
     projects.forEach((card, index) => {
-    gsap.fromTo(
-      card,
-      { 
-        y: 50, opacity: 0 
-      },
-      {
-        y: 0, 
-        opacity: 1, 
-        duration: 1,
-        delay: 0.3 * (index + 1),
-        scrollTrigger: {
-          trigger: card,
-          start: 'top bottom-=100',
+      gsap.fromTo(
+        card,
+        {
+          y: 50,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          delay: 0.3 * (index + 1),
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom-=100",
+          },
         }
-      }
-    )
-  })
+      );
+    });
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0 },
@@ -44,7 +49,7 @@ const ShowcaseSection = () => {
         <div className="showcaselayout">
           {/* LEFT */}
           <div className="first-project-wrapper" ref={project1Ref}>
-            <div className="image-wrapper">
+            <div className="image-wrapper bg-[#f5f5f5]">
               <img src="/images/project1.png" alt="kitchenchicken" />
             </div>
             <div className="text-content">
@@ -64,7 +69,7 @@ const ShowcaseSection = () => {
           {/* RIGHT */}
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={project2Ref}>
-              <div className="image-wrapper bg-[#ffeffdb]">
+              <div className="image-wrapper bg-[#ffeffd]">
                 <img src="/images/project2.png" alt="mamnonyeuthuong" />
               </div>
               <h2>Prenatal Health Tracking System</h2>
